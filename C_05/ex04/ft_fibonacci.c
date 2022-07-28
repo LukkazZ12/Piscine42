@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lucade-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 21:44:39 by lucade-s          #+#    #+#             */
+/*   Updated: 2022/07/25 21:44:40 by lucade-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_fibonacci(int index)
+{
+	int	aux;
+
+	if (index == 0)
+		return (0);
+	else if (index == 1)
+		return (1);
+	else if (index > 1)
+	{
+		aux = ft_fibonacci(index - 1) + ft_fibonacci(index - 2);
+		return (aux);
+	}
+	else
+		return (-1);
+}
