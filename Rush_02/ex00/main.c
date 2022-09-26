@@ -42,7 +42,7 @@ void	zero(char *c)
 	}
 }
 
-int	read_num(char *c, char *str, int i) //tratar o n caso não tenha dado erro
+int	read_num(char *c, char *str, int i)
 {
 	int	n;
 
@@ -65,46 +65,46 @@ int	read_num(char *c, char *str, int i) //tratar o n caso não tenha dado erro
 	return (n);
 }
 
-int	error(int l, char *c) //l = argc -1, argv[1]
+int	error(int l, char *c)
 {	
-	int	i; 
+	int	i;
 
-	if (l != 1 && l != 2) //2 ou 3 do argc
-		return (-1); //parar função error
-	else if (l == 1)//se não tiver o dicionário
+	if (l != 1 && l != 2)
+		return (-1);
+	else if (l == 1)
 	{
 		i = open("numbers.dict", O_RDONLY);
-		if (c[0] == '\0')//argv[1][0] para verificar se ela é nula
+		if (c[0] == '\0')
 			return (-1);
 	}
 	else
-		i = open(c, O_RDONLY);//abre argv[1] = c
+		i = open(c, O_RDONLY);
 	if (i == -1)
 		return (-1);
 	return (i);
 }
-         //Rush, biblioteca + n ou só o n   (3 ou 2)   //cria 2 ou 3 strings, o 1 é o Rush, arquivo executável
+
 int	main(int argc, char *argv[])
 {
-	int			i; 
+	int			i;
 	int			j;
-	int			l; 
+	int			l;
 	char		buf[4096];
 
-	l = argc - 1; // porque nosso n será 2 ou 3
-	j = error(l, argv[1]); //tratamento de erro //argc que é 1 (que é biblioteca ou numero)
-	if (j == -1) //resultado para o erro
-
+	l = argc - 1;
+	j = error(l, argv[1]);
+	if (j == -1)
 	{
-		write(1, "Error\n", 6); //6 número do error
-		return (1); //parar função
+		write(1, "Error\n", 6);
+		return (1);
 	}	
 	else
-		i = read_num(argv[l], buf, j); //tratar o n, verificar se vamos executar
-	if (i == -1) 
+		i = read_num(argv[l], buf, j);
+	if (i == -1)
+	{
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	i_1_to_39(argv[l], buf, i); //começar o programa
+	i_1_to_39(argv[l], buf, i);
 	return (0);
 }

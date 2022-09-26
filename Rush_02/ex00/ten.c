@@ -53,10 +53,10 @@ void	two_or_more(char *c, char *str)
 
 void	ten(char *c, char *str)
 {
-	if (*c == '0') //se for zero entra na uni
+	if (*c == '0')
 		uni(c + 1, str);
-	else if (c[0] == '1') //se for 1 entra na one
+	else if (c[0] == '1')
 		one(c, str);
 	else
-		two_or_more(c, str); //cado não entra na two ou more
+		two_or_more(c, str);
 }

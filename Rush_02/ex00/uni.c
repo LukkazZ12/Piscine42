@@ -12,16 +12,16 @@
 
 #include <unistd.h>
 
-void	uni(char *c, char *str) // buscar no dicionário e escrever o número da unidade em si
+void	uni(char *c, char *str)
 {	
 	int	j;
 
 	j = 0;
-	while (str[j] != *c) //procura n na buff e escreve o nome
+	while (str[j] != *c)
 		j++;
-	while (str[j] < 'a' || str[j] > 'z') //verifica se é espaço ou dois pontos
+	while (str[j] < 'a' || str[j] > 'z')
 		j++;
-	while (str[j] != '\n') //encontra a letra e escreve
+	while (str[j] != '\n')
 	{
 		write(1, &str[j], 1);
 		j++;
